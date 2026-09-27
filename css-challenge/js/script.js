@@ -1,48 +1,30 @@
 (function () {
   "use strict";
 
-  var toggle = document.getElementById("navToggle");
-  var menu = document.getElementById("navMenu");
-  if (!toggle || !menu) return;
+  var grid = document.getElementById("dashboardGrid");
+  var caption = document.getElementById("gridCaption");
+  var tabs = document.querySelectorAll(".grid-switch__tab");
+  if (!grid || !tabs.length) return;
 
-  function closeMenu() {
-    menu.classList.remove("is-open");
-    toggle.setAttribute("aria-expanded", "false");
-  }
+  var captions = {
+    desktop: "repeat(4, 1fr) · bento, 3 rows",
+    tablet: "repeat(2, 1fr) · paired, 4 rows",
+    mobile: "repeat(1, 1fr) · stacked, 6 rows"
+  };
 
-  function openMenu() {
-    menu.classList.add("is-open");
-    toggle.setAttribute("aria-expanded", "true");
-  }
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      var layout = tab.getAttribute("data-layout");
 
-  toggle.addEventListener("click", function () {
-    var isOpen = menu.classList.contains("is-open");
-    if (isOpen) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  });
+      tabs.forEach(function (t) {
+        t.classList.remove("is-active");
+        t.setAttribute("aria-selected", "false");
+      });
+      tab.classList.add("is-active");
+      tab.setAttribute("aria-selected", "true");
 
-  menu.addEventListener("click", function (event) {
-    if (event.target.tagName === "A") closeMenu();
-  });
-
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && menu.classList.contains("is-open")) {
-      closeMenu();
-      toggle.focus();
-    }
-  });
-
-  document.addEventListener("click", function (event) {
-    var isOpen = menu.classList.contains("is-open");
-    if (!isOpen) return;
-    if (menu.contains(event.target) || toggle.contains(event.target)) return;
-    closeMenu();
-  });
-
-  window.addEventListener("resize", function () {
-    if (window.innerWidth >= 768) closeMenu();
+      grid.setAttribute("data-preview", layout);
+      if (caption && captions[layout]) caption.textContent = captions[layout];
+    });
   });
 })();
