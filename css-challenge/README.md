@@ -121,6 +121,10 @@ http://localhost:8000
 
 Opening `index.html` directly in a browser also works.
 
+## Live Website
+
+Live website: https://nimbus-css-challenge.vercel.app
+
 ## Screenshots
 
 Located in the repository's shared `screenshots/` folder:
