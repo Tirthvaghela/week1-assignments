@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nimbus — Data, without the noise</title>
+  <meta name="description" content="Nimbus: an editorial-style analytics product page built to showcase Flexbox, CSS Grid and animation.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__row">
+      <a class="brand" href="#top">
+        <span class="brand__mark" aria-hidden="true">N</span>
+        <span class="brand__word">Nimbus</span>
+      </a>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav class="site-nav" id="navMenu" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="#top">Overview</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+        </ul>
+        <a class="btn btn--ghost btn--sm" href="#analytics">Get started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Analytics, without the noise</p>
+          <h1 class="hero__title">See what<br>your data<br>is saying.</h1>
+          <p class="hero__lede">Nimbus turns product, revenue and support metrics into one clear read — so a decision takes minutes, not meetings.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#dashboard">Explore Nimbus</a>
+            <a class="btn btn--text" href="#analytics">View dashboard <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <figure class="hero__figure" aria-hidden="true">
+          <div class="hero__figure-top">
+            <span class="hero__figure-label">Weekly active users</span>
+            <span class="hero__figure-value">128.4K</span>
+            <span class="hero__figure-delta">▲ 4.2% vs last week</span>
+          </div>
+          <svg class="hero__figure-chart" viewBox="0 0 320 110" preserveAspectRatio="none">
+            <line x1="0" y1="27.5" x2="320" y2="27.5" class="hero__figure-grid"></line>
+            <line x1="0" y1="55" x2="320" y2="55" class="hero__figure-grid"></line>
+            <line x1="0" y1="82.5" x2="320" y2="82.5" class="hero__figure-grid"></line>
+            <polyline points="0,88 40,74 80,79 120,52 160,60 200,34 240,40 280,14 320,20" class="hero__figure-line"></polyline>
+            <circle cx="320" cy="20" r="3.5" class="hero__figure-dot"></circle>
+          </svg>
+          <div class="hero__figure-bars">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <figcaption class="hero__figure-caption">Fig. 01 — Twelve-week trend, product-wide</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ FLEXBOX CHALLENGE ============ -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">01 — Why Nimbus</p>
+          <h2 class="section-title">Three ways teams stop guessing.</h2>
+        </div>
+
+        <div class="feature-row">
+          <article class="feature-item">
+            <span class="feature-item__index">01</span>
+            <h3 class="feature-item__title">Real-time</h3>
+            <p class="feature-item__desc">Metrics update as they happen, so a spike or a drop is visible in seconds — not at the end of the week.</p>
+            <div class="feature-item__viz feature-item__viz--pulse" aria-hidden="true">
+              <span class="pulse-dot"></span>
+              <span class="feature-item__viz-label">Live</span>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span class="feature-item__index">02</span>
+            <h3 class="feature-item__title">Context</h3>
+            <p class="feature-item__desc">Every number carries its own trend history, so it's never read on its own.</p>
+            <div class="feature-item__viz feature-item__viz--trend" aria-hidden="true">
+              <svg viewBox="0 0 100 28" preserveAspectRatio="none">
+                <polyline points="0,24 15,19 30,21 45,10 60,13 75,5 100,3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span class="feature-item__index">03</span>
+            <h3 class="feature-item__title">Clarity</h3>
+            <p class="feature-item__desc">Product, revenue and support metrics live in one workspace, read the same way by everyone.</p>
+            <div class="feature-item__viz feature-item__viz--stack" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GRID CHALLENGE ============ -->
+    <section class="dashboard" id="dashboard">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">02 — Live dashboard</p>
+          <h2 class="section-title">One read on the whole product.</h2>
+        </div>
+
+        <ul class="dashboard-grid">
+          <li class="tile tile--lg">
+            <span class="tile__label">Active users</span>
+            <span class="tile__value">24,850</span>
+            <span class="tile__delta tile__delta--up">▲ 4.2% vs last week</span>
+            <div class="tile__bars" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </li>
+          <li class="tile tile--lg">
+            <span class="tile__label">Growth</span>
+            <span class="tile__value">+12.4%</span>
+            <span class="tile__delta tile__delta--up">▲ quarter over quarter</span>
+            <svg class="tile__chart" viewBox="0 0 200 50" preserveAspectRatio="none" aria-hidden="true">
+              <polyline points="0,42 30,35 60,38 90,22 120,26 150,10 200,6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </li>
+          <li class="tile">
+            <span class="tile__label">Revenue</span>
+            <span class="tile__value">$68,240</span>
+            <span class="tile__delta tile__delta--up">▲ 6.8%</span>
+          </li>
+          <li class="tile">
+            <span class="tile__label">Uptime</span>
+            <span class="tile__value">99.98%</span>
+            <span class="tile__delta tile__delta--flat">— 30 days</span>
+          </li>
+          <li class="tile">
+            <span class="tile__label">Alerts</span>
+            <span class="tile__value">03</span>
+            <span class="tile__delta tile__delta--down">▼ 2 resolved</span>
+          </li>
+          <li class="tile tile--wide">
+            <span class="tile__label">Sessions</span>
+            <span class="tile__value">142,910</span>
+            <span class="tile__delta tile__delta--up">▲ 1.9% vs last week</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ INSIGHT / TRANSITION ============ -->
+    <section class="insight">
+      <div class="container insight__inner">
+        <p class="section-label section-label--on-dark">03 — The pattern</p>
+        <p class="insight__statement">Numbers are only useful<br>when you can see the pattern.</p>
+        <div class="insight__trend" aria-hidden="true">
+          <span class="insight__trend-line"></span>
+          <span class="insight__trend-tick"></span>
+          <span class="insight__trend-tick"></span>
+          <span class="insight__trend-tick"></span>
+          <span class="insight__trend-tick insight__trend-tick--hi"></span>
+          <span class="insight__trend-tick"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ANIMATION CHALLENGE ============ -->
+    <section class="cta-band" id="analytics">
+      <div class="container cta-band__row">
+        <div>
+          <p class="section-label">04 — Get started</p>
+          <h2 class="section-title">Ready to see it on your own data?</h2>
+        </div>
+        <button type="button" class="cta-link" id="analyticsBtn">
+          <span>Explore live analytics</span>
+          <span class="cta-link__arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__row">
+      <span class="site-footer__word">Nimbus</span>
+      <p class="site-footer__note">A fictional analytics product, built to demonstrate frontend fundamentals.</p>
+      <nav aria-label="Footer">
+        <ul class="site-footer__list">
+          <li><a href="#top">Overview</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+        </ul>
+      </nav>
+      <span class="site-footer__copy">© 2026 Nimbus</span>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
